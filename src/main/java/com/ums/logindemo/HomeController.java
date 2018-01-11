@@ -1,11 +1,5 @@
 package com.ums.logindemo;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +17,7 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "login", method = RequestMethod.POST)
+	@RequestMapping(value = "login", method = {RequestMethod.POST,RequestMethod.GET})
 	public String login(String username,String password,Model model) {
 				if(username.equals("gameloft9")&&password.equals("123")){
 					model.addAttribute("username", username);
